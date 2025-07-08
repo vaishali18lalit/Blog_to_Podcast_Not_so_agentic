@@ -13,13 +13,13 @@ The core idea: **Should we really use an agent for this task? Or is a simple, se
 
 This repo is not just about building a cool tool — it's about **evaluating trade-offs**:
 
-| Aspect | Sequential (`app.py`) | Agent-Based (`blog_to_podcast_agent.py`) |
-|--------|------------------------|------------------------------------------|
-| Simplicity | ✅ Straightforward | ❌ More complex setup |
-| Flexibility | ❌ Fixed flow | ✅ Modular, step-by-step reasoning |
-| Performance | ✅ Fast | ⚠️ Slightly slower |
-| Cost | ✅ Minimal API usage | ⚠️ More tokens used |
-| Usefulness | ✅ For fixed workflows | ✅ For dynamic or evolving tasks |
+| Aspect        | Sequential (`app.py`) | Agent-Based (`blog_to_podcast_agent.py`) |
+|---------------|------------------------|-------------------------------------------|
+| Simplicity    | ✅ Straightforward      | ❌ More complex setup                      |
+| Flexibility   | ❌ Fixed flow           | ✅ Modular, step-by-step reasoning         |
+| Performance   | ✅ Fast                 | ⚠️ Slightly slower                         |
+| Cost          | ✅ Minimal API usage    | ⚠️ More tokens used                        |
+| Usefulness    | ✅ For fixed workflows  | ✅ For dynamic or evolving tasks           |
 
 ---
 
@@ -47,6 +47,47 @@ This repo is not just about building a cool tool — it's about **evaluating tra
 
 1. **Clone the repository**:
 
-```bash
+
 git clone https://github.com/vaishali18lalit/Blog_to_Podcast_Not_so_agentic.git
 cd Blog_to_Podcast_Not_so_agentic
+
+2. **Install Dependencies**
+
+   pip install -r requirements.txt
+
+3. **How to Run**
+
+   *Simple Sequential Flow*
+
+   streamlit run app.py
+
+   *Agno Agentic Flow*
+
+   streamlit run blog_to_podcast_agent.py
+
+
+## How it works 
+
+Enter your API keys in the sidebar
+
+Paste the blog URL
+
+Click "🎙️ Generate Podcast"
+
+The app will:
+
+✅ Scrape blog content (via Firecrawl)
+
+✅ Summarize it (via GPT-4)
+
+✅ Convert it to audio (via ElevenLabs)
+
+✅ Let you listen to or download the podcast
+
+
+
+
+
+
+
+
