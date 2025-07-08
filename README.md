@@ -1,52 +1,52 @@
-## 📰 ➡️ 🎙️ Blog to Podcast Agent
-This is a Streamlit-based application that allows users to convert any blog post into a podcast. The app uses OpenAI's GPT-4 model for summarization, Firecrawl for scraping blog content, and ElevenLabs API for generating audio. Users simply input a blog URL, and the app will generate a podcast episode based on the blog.
+# 📰 ➡️ 🎙️ Blog to Podcast: Agent vs Sequential Flow
 
-## Features
+This project explores two different implementations of a "Blog to Podcast" application:
 
-- **Blog Scraping**: Scrapes the full content of any public blog URL using Firecrawl API.
+- ✅ **Simple Sequential Flow** (`app.py`) — Uses direct API calls to scrape, summarize, and convert a blog post into a podcast.
+- 🧠 **Agent-Based Flow** (`blog_to_podcast_agent.py`) — Uses an agent (via LangChain or similar orchestration) to perform the same steps using tools.
 
-- **Summary Generation**: Creates an engaging and concise summary of the blog (within 2000 characters) using OpenAI GPT-4.
+The core idea: **Should we really use an agent for this task? Or is a simple, sequential approach good enough?**
 
-- **Podcast Generation**: Converts the summary into an audio podcast using the ElevenLabs voice API.
+---
 
-- **API Key Integration**: Requires OpenAI, Firecrawl, and ElevenLabs API keys to function, entered securely via the sidebar.
+## 💡 Objective
 
-## Setup
+This repo is not just about building a cool tool — it's about **evaluating trade-offs**:
 
-### Requirements 
+| Aspect | Sequential (`app.py`) | Agent-Based (`blog_to_podcast_agent.py`) |
+|--------|------------------------|------------------------------------------|
+| Simplicity | ✅ Straightforward | ❌ More complex setup |
+| Flexibility | ❌ Fixed flow | ✅ Modular, step-by-step reasoning |
+| Performance | ✅ Fast | ⚠️ Slightly slower |
+| Cost | ✅ Minimal API usage | ⚠️ More tokens used |
+| Usefulness | ✅ For fixed workflows | ✅ For dynamic or evolving tasks |
 
-1. **API Keys**:
-    - **OpenAI API Key**: Sign up at OpenAI to obtain your API key.
+---
 
-    - **ElevenLabs API Key**: Get your ElevenLabs API key from ElevenLabs.
+## 🔧 Features
 
-    - **Firecrawl API Key**: Get your Firecrawl API key from Firecrawl.
+- 🔍 **Blog Scraping** using [Firecrawl API](https://www.firecrawl.dev/)
+- 🧠 **Summarization** via OpenAI GPT-4 (within 2000 characters)
+- 🎙️ **Podcast Audio Generation** via [ElevenLabs](https://www.elevenlabs.io/)
+- 📤 **Streamlit UI** for easy testing and comparison
+- 🔑 **Secure API Key Input** via sidebar
 
-2. **Python 3.8+**: Ensure you have Python 3.8 or higher installed.
+---
 
-### Installation
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps
-   cd ai_agent_tutorials/ai_blog_to_podcast_agent
-   ```
+## 🔑 Requirements
 
-2. Install the required Python packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
-### Running the App
+- Python 3.8+
+- API Keys for:
+  - [OpenAI](https://platform.openai.com/account/api-keys)
+  - [Firecrawl](https://www.firecrawl.dev/)
+  - [ElevenLabs](https://www.elevenlabs.io/)
 
-1. Start the Streamlit app:
-   ```bash
-   streamlit run blog_to_podcast_agent.py
-   ```
+---
 
-2. In the app interface:
-    - Enter your OpenAI, ElevenLabs, and Firecrawl API keys in the sidebar.
+## 🚀 Setup
 
-    - Input the blog URL you want to convert.
+1. **Clone the repository**:
 
-    - Click "🎙️ Generate Podcast".
-
-    - Listen to the generated podcast or download it.
+```bash
+git clone https://github.com/vaishali18lalit/Blog_to_Podcast_Not_so_agentic.git
+cd Blog_to_Podcast_Not_so_agentic
